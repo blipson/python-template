@@ -28,4 +28,5 @@ Run 'make clean package build runi tail' (use 'run' instead of 'runi' if you don
 1. Clone or download the repository as a zip file locally
 2. Copy the contents into your own git repository
 3. Replace instances of 'template' with whatever you want your app to be named in folder names, file names, and file contents
+5. (Optional if you don't want to use oracle) Remove the 'cx_Oracle install prep (installing instantclient)' step from the Dockerfile and replace with whatever database/resource configuration you want, remove the .zip files from the template/deploy directory, and remove the `COPY template/deploy/*.zip /opt/oracle/` line from the Dockerfile
 4. Start developing your Flask application inside app.py!
