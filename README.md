@@ -7,7 +7,7 @@ Run 'make clean package build runi tail' (use 'run' instead of 'runi' if you don
 ### What does the Makefile actually do?
 - Cleans any old docker containers using `docker stop` and `docker rm`
 - Packages your application into a nice .zip file through the use of a custom bash script
-- The bash script ignores files that aren't necessary for building/running
+    - The bash script ignores files that aren't necessary for building/running
 - Builds the docker container using the Dockerfile, which does the following:
     - Installs/updates packages
     - Installs/configures cx_Oracle with the instantclient
