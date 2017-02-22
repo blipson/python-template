@@ -1,0 +1,34 @@
+{
+    "app": {
+        "port": 5005,
+        "persist_history": false,
+        "debug": true,
+        "batch_memoize": false,
+        "id_service_url": "https://dev.id.spsc.io"
+    },
+    "obfuscation": {
+        "obfuscation_email_address": "template_user@template_domain.template",
+        "production_environments": ["prod", "preprod"]
+    },
+    "aws": {
+        "aws_access_key_id": "INSERT_YOUR_ACCES_KEY_HERE",
+        "aws_secret_access_key": "INSERT_YOUR_SECRET_KEY_HERE"
+    },
+    "roles": {},
+    "environments": [
+        {
+            "name": "sqa",
+            "prefix": "oracle+cx_oracle://",
+            "username": "spscdc4",
+            "password": "pmTrFN3dtH",
+            "url": "trckprime1.p01.sqa:1521/?service_name=drtrck_Q"
+        },
+        {
+            "name": "rds-dsjf",
+            "prefix": "oracle+cx_oracle://",
+            "username": "template_app_rw",
+            "password": "CSavhe_28_vniw",
+            "url": "dev-dc4-1-orards-dsjf.c6ysfbkulnjt.us-east-1.rds.amazonaws.com:1521/DC41D"
+        }
+    ]
+}
