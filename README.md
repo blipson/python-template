@@ -7,20 +7,20 @@ Run 'make clean package build runi tail' (use 'run' instead of 'runi' if you don
 ### What does the Makefile actually do?
 - Cleans any old docker containers using `docker stop` and `docker rm`
 - Packages your application into a nice .zip file through the use of a custom bash script
--- The bash script ignores files that aren't necessary for building/running
+- The bash script ignores files that aren't necessary for building/running
 - Builds the docker container using the Dockerfile, which does the following:
--- Installs/updates packages
--- Installs/configures cx_Oracle with the instantclient
--- Makes a working directory and copies the .zip file with the app into it
--- Unzips the app
--- Installs app-specific packages
--- Configures the application
--- Configures nginx using the template.nginx.conf file
--- sets permissions and users
--- Runs nginx on port 80 (exposes that port)
--- Runs a supervisor using the template.supervisor.conf file, which sets the follwing:
-    - Generic supervisor settings
-    - The template program settings, including the run command `uswgi` using the uwsgi.ini file, which sets the socket at 5005 and the application start file as app.py
+    - Installs/updates packages
+    - Installs/configures cx_Oracle with the instantclient
+    - Makes a working directory and copies the .zip file with the app into it
+    - Unzips the app
+    - Installs app-specific packages
+    - Configures the application
+    - Configures nginx using the template.nginx.conf file
+    - sets permissions and users
+    - Runs nginx on port 80 (exposes that port)
+    - Runs a supervisor using the template.supervisor.conf file, which sets the follwing:
+        - Generic supervisor settings
+        - The template program settings, including the run command `uswgi` using the uwsgi.ini file, which sets the socket at 5005 and the application start file as app.py
 - Runs aforementioned docker container using all necessary environment variables
 - Logs to console using `docker logs`
 
