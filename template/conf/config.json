@@ -19,16 +19,16 @@
         {
             "name": "sqa",
             "prefix": "oracle+cx_oracle://",
-            "username": "spscdc4",
-            "password": "pmTrFN3dtH",
-            "url": "trckprime1.p01.sqa:1521/?service_name=drtrck_Q"
+            "username": "YOUR_DB_UNAME",
+            "password": "YOUR_DB_PWORD",
+            "url": "YOUR_DB_URL"
         },
         {
             "name": "rds-dsjf",
             "prefix": "oracle+cx_oracle://",
-            "username": "template_app_rw",
-            "password": "CSavhe_28_vniw",
-            "url": "dev-dc4-1-orards-dsjf.c6ysfbkulnjt.us-east-1.rds.amazonaws.com:1521/DC41D"
+            "username": "YOUR_RDS_UNAME",
+            "password": "YOUR_RDS_PWORD",
+            "url": "YOUR_RDS_URL"
         }
     ]
 }
