@@ -1,0 +1,1341 @@
+{
+    "tables": [
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "audit_column_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "audit_row_uid": "audit_row_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "audit_column_uid", 
+                "audit_row_uid", 
+                "column_name", 
+                "old_value", 
+                "new_value"
+            ], 
+            "name": "audit_column_changes"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "audit_row_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "audit_row_uid", 
+                "table_name", 
+                "modified_by", 
+                "modified_date", 
+                "row_uid", 
+                "old_version", 
+                "new_version", 
+                "alt_row_uid"
+            ], 
+            "name": "audit_row_changes"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "capability_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "description",
+                "usage_code"
+            ], 
+            "foreign_keys": {
+                "service_uid": "service_uid", 
+                "datatype_uid": "datatype_uid", 
+                "company_uid": "company_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "capability_uid", 
+                "company_uid", 
+                "datatype_uid", 
+                "service_uid", 
+                "active", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "usage_code", 
+                "description", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "capability"
+        }, 
+        {
+            "transferable_state_keys": [
+                "active"
+            ], 
+            "primary_key": "company_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "company_name"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "company_uid", 
+                "company_name", 
+                "active", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "company"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "company_altlookup_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "identifier_key", 
+                "identifier_value"
+            ], 
+            "foreign_keys": {
+                "profile_uid": "profile_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "company_altlookup_uid", 
+                "profile_uid", 
+                "identifier_key", 
+                "identifier_value", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "company_altlookup"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "group_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "group_name"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "group_uid", 
+                "group_name", 
+                "notes", 
+                "created_by", 
+                "created_date"
+            ], 
+            "name": "company_group"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "identifier_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "identifier"
+            ], 
+            "foreign_keys": {
+                "identifiertype_uid": "identifiertype_uid", 
+                "company_uid": "company_uid"
+            }, 
+            "sensitive_state_keys": [
+                "identifier"
+            ], 
+            "columns": [
+                "identifier_uid", 
+                "company_uid", 
+                "identifier", 
+                "identifiertype_uid", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "company_identifier"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [
+                "location_number", 
+                "location_name", 
+                "location_address1", 
+                "location_address2", 
+                "location_city", 
+                "location_state", 
+                "location_country", 
+                "location_postalcode", 
+                "location_lat", 
+                "location_long", 
+                "location_contactname", 
+                "location_phone", 
+                "location_type"
+            ], 
+            "columns": [
+                "company_uid", 
+                "location_number", 
+                "location_name", 
+                "location_address1", 
+                "location_address2", 
+                "location_city", 
+                "location_state", 
+                "location_country", 
+                "location_postalcode", 
+                "location_lat", 
+                "location_long", 
+                "location_contactname", 
+                "location_phone", 
+                "location_type"
+            ], 
+            "name": "company_location"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "data_class_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "data_class_name"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "data_class_uid", 
+                "data_class_name", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "data_class"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "datatype_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "doctype", 
+                "subtype",
+                "edi_group", 
+                "name", 
+                "version", 
+                "xts_format"
+            ], 
+            "foreign_keys": {
+                "data_class_uid": "data_class_uid", 
+                "datatype_business_object_uid": "datatype_business_object_uid"
+            }, 
+            "conditional_lookup_predecessors": [
+                {
+                    "path": [
+                        "data_class_uid"
+                    ],
+                    "condition_element": "data_class_name",
+                    "condition": "['map'] if {}.lower() in ['sip', 'rsx'] else []"
+                }
+            ],
+            "sensitive_state_keys": [], 
+            "columns": [
+                "datatype_uid", 
+                "name", 
+                "version", 
+                "doctype", 
+                "subtype", 
+                "data_class_uid", 
+                "xts_format", 
+                "edi_group", 
+                "primary_appkey", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "lookup_alias", 
+                "secondary_appkey", 
+                "tertiary_appkey", 
+                "certified", 
+                "datatype_business_object_uid", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "datatype"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "appkey_type_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "appkey_name",
+                "appkey_desc",
+                "correlation_key",
+                "query"
+            ], 
+            "foreign_keys": {
+                "datatype_uid": "datatype_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "appkey_type_uid", 
+                "datatype_uid", 
+                "appkey_name", 
+                "appkey_desc", 
+                "query", 
+                "correlation_key"
+            ], 
+            "name": "datatype_appkey"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "datatype_business_object_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "name"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "datatype_business_object_uid", 
+                "name"
+            ], 
+            "name": "datatype_business_object"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "doctype"
+            ], 
+            "foreign_keys": {
+                "datatype_uid": "datatype_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "datatype_uid", 
+                "doctype"
+            ], 
+            "name": "datatype_doctypes"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "datatype_owner_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "datatype_uid": "datatype_uid", 
+                "company_uid": "company_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "datatype_owner_uid", 
+                "company_uid", 
+                "datatype_uid"
+            ], 
+            "name": "datatype_owners"
+        }, 
+        {
+            "transferable_state_keys": [
+                "element_delimiter", 
+                "release_character", 
+                "segment_delimiter", 
+                "subelement_delimiter",
+                "decimal_character"
+            ], 
+            "primary_key": "edi_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "env_id", 
+                "env_qualifier", 
+                "grp_id", 
+                "grp_qualifier"
+            ], 
+            "foreign_keys": {
+                "company_uid": "company_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "edi_uid", 
+                "company_uid", 
+                "env_qualifier", 
+                "env_id", 
+                "grp_id", 
+                "comm_id", 
+                "edi_password", 
+                "segment_delimiter", 
+                "element_delimiter", 
+                "subelement_delimiter", 
+                "release_character", 
+                "decimal_character", 
+                "name", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "grp_qualifier", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "edi_company"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "endpoint_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "name"
+            ], 
+            "foreign_keys": {
+                "data_class_uid": "data_class_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "endpoint_uid", 
+                "name", 
+                "data_class_uid", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "endpoint"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "param_value"
+            ], 
+            "foreign_keys": {
+                "action_uid": "action_uid", 
+                "fb_param_uid": "fb_param_uid", 
+                "capability_action_uid": "capability_action_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "capability_action_uid", 
+                "action_uid", 
+                "fb_param_uid", 
+                "param_value", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "filebroker_action_param_values"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "action_uid": "action_uid", 
+                "fb_param_uid": "fb_param_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "action_uid", 
+                "fb_param_uid", 
+                "default_value", 
+                "required"
+            ], 
+            "name": "filebroker_action_params"
+        }, 
+        {
+            "transferable_state_keys": [
+                "action_description"
+            ], 
+            "primary_key": "action_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "action_name"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "action_uid", 
+                "action_name", 
+                "action_description"
+            ], 
+            "name": "filebroker_actions"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "insert_conditional_key_value": [
+                {
+                    "column": "active",
+                    "path": [
+                        "capability_uid",
+                        "service_uid"
+                    ],
+                    "condition_element": "name",
+                    "condition": ".lower() in ['fitoservice']",
+                    "cond_true": "1",
+                    "cond_false": "0"
+                }
+            ],
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "capability_uid": "capability_uid", 
+                "input_channel": "channel_uid", 
+                "output_channel": "channel_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "capability_uid", 
+                "active", 
+                "input_channel", 
+                "output_channel", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "filebroker_capability"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "capability_action_uid", 
+            "insert_default_key_value": {
+                "active": 0
+            }, 
+            "universal_identity_keys": [
+                "position"
+            ], 
+            "foreign_keys": {
+                "service_uid": "service_uid", 
+                "capability_uid": "capability_uid", 
+                "action_uid": "action_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "capability_action_uid", 
+                "capability_uid", 
+                "service_uid", 
+                "action_uid", 
+                "active", 
+                "position", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "filebroker_capability_actions"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "channel_uid": "channel_uid", 
+                "fb_param_uid": "fb_param_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "channel_uid", 
+                "fb_param_uid", 
+                "default_value", 
+                "required", 
+                "context"
+            ], 
+            "name": "filebroker_channel_params"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "channel_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "channel_name", 
+                "channel_scheme"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "channel_uid", 
+                "channel_name", 
+                "channel_description", 
+                "channel_scheme"
+            ], 
+            "name": "filebroker_channels"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "conditional_transferable_state_keys": [
+                {
+                    "column": "param_value",
+                    "path": [
+                        "fb_param_uid",
+                        "parameter_type"
+                    ],
+                    "condition_element": "type_name",
+                    "condition": ".lower() in ['datatype', 'relationship']",
+                    "cond_true": "",
+                    "cond_false": "['param_value'][0]"
+                }
+            ],
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "insert_conditional_key_value": [
+                {
+                    "column": "param_value",
+                    "path": [
+                        "fb_param_uid",
+                        "parameter_type"
+                    ],
+                    "condition_element": "type_name",
+                    "condition": ".lower() in ['relationship']",
+                    "cond_true": "",
+                    "cond_false": "n['param_value']"
+                }
+            ],
+            "universal_identity_keys": [
+                "direction"
+            ], 
+            "foreign_keys": {
+                "channel_uid": "channel_uid", 
+                "capability_uid": "capability_uid", 
+                "fb_param_uid": "fb_param_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "capability_uid", 
+                "channel_uid", 
+                "fb_param_uid", 
+                "param_value", 
+                "direction", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "filebroker_param_values"
+        }, 
+        {
+            "transferable_state_keys": [
+                "parameter_description"
+            ], 
+            "primary_key": "fb_param_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "parameter_name"
+            ], 
+            "foreign_keys": {
+                "parameter_type": "type_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "fb_param_uid", 
+                "parameter_name", 
+                "parameter_type", 
+                "parameter_description"
+            ], 
+            "name": "filebroker_params"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "group_member_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "group_uid": "group_uid", 
+                "company_uid": "company_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "group_member_uid", 
+                "group_uid", 
+                "company_uid"
+            ], 
+            "name": "group_member"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "group_parameter_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "group_parameter_uid", 
+                "group_parameter_name", 
+                "description"
+            ], 
+            "name": "group_parameter"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "group_parameter_values_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "group_parameter_uid": "group_parameter_uid", 
+                "group_uid": "group_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "group_parameter_values_uid", 
+                "group_uid", 
+                "group_parameter_uid", 
+                "group_parameter_value"
+            ], 
+            "name": "group_parameter_values"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "identifiertype_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "identifier"
+            ], 
+            "foreign_keys": {
+                "type_uid": "type_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "identifiertype_uid", 
+                "identifier", 
+                "type_uid"
+            ], 
+            "name": "identifier_types"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "inflight_data_override_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "receiver_uid": "receiver_uid", 
+                "sender_uid": "sender_uid", 
+                "inflight_status_uid": "inflight_status_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "inflight_data_override_uid", 
+                "sender_uid", 
+                "receiver_uid", 
+                "doctype", 
+                "inflight_status_uid"
+            ], 
+            "name": "inflight_data_override"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "inflight_status_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "inflight_status_uid", 
+                "status", 
+                "description"
+            ], 
+            "name": "inflight_status"
+        }, 
+        {
+            "transferable_state_keys": [
+                "map_name"
+            ], 
+            "primary_key": "map_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "dest_datatype_uid": "datatype_uid", 
+                "map_service_uid": "service_uid", 
+                "source_datatype_uid": "datatype_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "map_uid", 
+                "source_datatype_uid", 
+                "dest_datatype_uid", 
+                "map_service_uid", 
+                "map_name", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "empty_result_allowed", 
+                "input_is_jms_parameters", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "map"
+        }, 
+        {
+            "transferable_state_keys": [
+                "source_rsx_version",
+                "dest_rsx_version"
+            ], 
+            "primary_key": "map_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "map_uid": "map_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "map_uid", 
+                "source_rsx_version", 
+                "dest_rsx_version"
+            ], 
+            "name": "map_rsx_version"
+        }, 
+        {
+            "transferable_state_keys": [
+                "value"
+            ], 
+            "primary_key": "parameter_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "param_list_uid": "param_list_uid", 
+                "capability_uid": "capability_uid"
+            }, 
+            "sensitive_state_keys": [
+                "value"
+            ], 
+            "columns": [
+                "parameter_uid", 
+                "param_list_uid", 
+                "capability_uid", 
+                "value", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "parameter"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "parameter_alias_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "parameter_alias_uid", 
+                "alias", 
+                "db_column", 
+                "app_module_name", 
+                "view_name", 
+                "attribute_name", 
+                "transform_operation", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "scope_name"
+            ], 
+            "name": "parameter_alias"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "param_list_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "name"
+            ], 
+            "foreign_keys": {
+                "service_uid": "service_uid", 
+                "type_uid": "type_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "param_list_uid", 
+                "service_uid", 
+                "name", 
+                "param_default", 
+                "required", 
+                "type_uid", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "parameter_list"
+        }, 
+        {
+            "transferable_state_keys": [
+                "stoponfailure", 
+                "active"
+            ], 
+            "primary_key": "procap_extension_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "position"
+            ], 
+            "foreign_keys": {
+                "extension_uid": "extension_uid", 
+                "pc_uid": "pc_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "procap_extension_uid", 
+                "extension_uid", 
+                "pc_uid", 
+                "position", 
+                "stoponfailure", 
+                "active", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "procap_extension"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "conditional_transferable_state_keys": [
+                {
+                    "column": "value",
+                    "path": [
+                        "extension_param_list_uid",
+                        "type"
+                    ],
+                    "condition_element": "type_name",
+                    "condition": ".lower() in ['datatype', 'relationship']",
+                    "cond_true": "",
+                    "cond_false": "['value'][0]"
+                }
+            ],
+            "primary_key": "procap_extension_param_uid", 
+            "insert_default_key_value": {}, 
+            "insert_conditional_key_value": [
+                {
+                    "column": "value",
+                    "path": [
+                        "extension_param_list_uid",
+                        "type"
+                    ],
+                    "condition_element": "type_name",
+                    "condition": ".lower() in ['relationship']",
+                    "cond_true": "",
+                    "cond_false": "n['value']"
+                }
+            ],
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "procap_extension_uid": "procap_extension_uid", 
+                "extension_param_list_uid": "extension_param_list_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "procap_extension_param_uid", 
+                "extension_param_list_uid", 
+                "procap_extension_uid", 
+                "value", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "procap_extension_parameters"
+        }, 
+        {
+            "transferable_state_keys": [
+                "webforms_enabled"
+            ], 
+            "primary_key": "profile_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "profile_name",
+                "tpid"
+            ], 
+            "foreign_keys": {
+                "edi_uid": "edi_uid", 
+                "company_uid": "company_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "profile_uid", 
+                "company_uid", 
+                "profile_name", 
+                "edi_uid", 
+                "tpid", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "webforms_enabled", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "profile"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "pc_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "capability_uid": "capability_uid", 
+                "profile_uid": "profile_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "pc_uid", 
+                "profile_uid", 
+                "capability_uid", 
+                "active", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "migration_source_uid", 
+                "migration_source_systemid"
+            ], 
+            "name": "profile_capabilities"
+        }, 
+        {
+            "transferable_state_keys": [
+                "active", 
+                "envctlnum", 
+                "grpctlnum", 
+                "docctlnum", 
+                "ackmode"
+            ], 
+            "primary_key": "relationship_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {
+                "sender_profile_uid": "profile_uid", 
+                "receiver_profile_uid": "profile_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "relationship_uid", 
+                "sender_profile_uid", 
+                "receiver_profile_uid", 
+                "active", 
+                "envctlnum", 
+                "grpctlnum", 
+                "docctlnum", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version", 
+                "ackmode"
+            ], 
+            "name": "relationship"
+        }, 
+        {
+            "transferable_state_keys": [
+                "description"
+            ], 
+            "primary_key": "extension_uid", 
+            "insert_default_key_value": {
+                "address": "CHANGEME"
+            }, 
+            "universal_identity_keys": [
+                "name"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "extension_uid", 
+                "name", 
+                "address", 
+                "description", 
+                "runonceperdoc"
+            ], 
+            "name": "router_extension"
+        }, 
+        {
+            "transferable_state_keys": [
+                "param_default",
+                "required"
+            ], 
+            "primary_key": "extension_param_list_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "name"
+            ], 
+            "foreign_keys": {
+                "extension_uid": "extension_uid", 
+                "type": "type_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "extension_param_list_uid", 
+                "extension_uid", 
+                "name", 
+                "param_default", 
+                "required", 
+                "type"
+            ], 
+            "name": "router_extension_param_list"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "rxservice_uid", 
+            "insert_default_key_value": { 
+                "service_address": "CHANGEME"
+            },
+            "universal_identity_keys": [
+                "errorcode",
+                "rxservice_uid"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "rxservice_uid", 
+                "errorcode", 
+                "service_address"
+            ], 
+            "name": "rxservice"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "service_uid", 
+            "insert_default_key_value": {
+                "address": "CHANGEME"
+            }, 
+            "universal_identity_keys": [
+                "name"
+            ], 
+            "foreign_keys": {
+                "endpoint_uid": "endpoint_uid"
+            }, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "service_uid", 
+                "name", 
+                "address", 
+                "endpoint_uid", 
+                "direction", 
+                "created_by", 
+                "created_date", 
+                "modified_by", 
+                "modified_date", 
+                "row_version"
+            ], 
+            "name": "service"
+        }, 
+        {
+            "transferable_state_keys": [
+                "require_ack_to_pass",
+                "edi_spec_name",
+                "validation_map"
+            ], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "tc_document_config_uid", 
+                "tc_profile_uid", 
+                "pc_uid", 
+                "validation_map", 
+                "edi_spec_name", 
+                "require_ack_to_pass"
+            ], 
+            "name": "tc_document_config"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "tc_document_config_uid", 
+                "omm_name", 
+                "doc_config_omm_uid"
+            ], 
+            "name": "tc_document_config_omm"
+        }, 
+        {
+            "transferable_state_keys": [
+                "tc_description",
+                "portal_documentation_url",
+                "hub_id"
+            ], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "tc_name"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [
+                "internal_contact_name",
+                "internal_contact_email",
+                "internal_contact_phone"
+            ], 
+            "columns": [
+                "tc_profile_uid", 
+                "tc_name", 
+                "tc_description", 
+                "portal_documentation_url", 
+                "internal_contact_name", 
+                "internal_contact_email", 
+                "internal_contact_phone", 
+                "hub_id"
+            ], 
+            "name": "tc_platform_config"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "tc_setup_uid", 
+                "tc_document_config_uid", 
+                "omm_name", 
+                "status", 
+                "pass_date", 
+                "pass_result_uid"
+            ], 
+            "name": "tc_results_rollup"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "", 
+            "insert_default_key_value": {
+                "active": 0
+            }, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [
+                "internal_contact_name",
+                "internal_contact_email", 
+                "internal_contact_phone", 
+                "customer_contact_name", 
+                "customer_contact_email", 
+                "customer_contact_phone",
+                "internal_username",
+                "internal_password"
+            ], 
+            "columns": [
+                "tc_setup_uid", 
+                "tc_sender_relationship_uid", 
+                "tc_receiver_relationship_uid", 
+                "active", 
+                "overall_status", 
+                "internal_contact_name", 
+                "internal_contact_email", 
+                "internal_contact_phone", 
+                "customer_contact_name", 
+                "customer_contact_email", 
+                "customer_contact_phone", 
+                "company_uid", 
+                "tp_company_uid", 
+                "tp_tc_platform_uid", 
+                "start_date", 
+                "end_date", 
+                "internal_username", 
+                "internal_password"
+            ], 
+            "name": "tc_setup"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "tracker_status_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "tracker_status_uid", 
+                "status", 
+                "trig", 
+                "terminal"
+            ], 
+            "name": "tracker_status"
+        }, 
+        {
+            "transferable_state_keys": [], 
+            "primary_key": "type_uid", 
+            "insert_default_key_value": {}, 
+            "universal_identity_keys": [
+                "type_name"
+            ], 
+            "foreign_keys": {}, 
+            "sensitive_state_keys": [], 
+            "columns": [
+                "type_uid", 
+                "type_name", 
+                "type_format", 
+                "description"
+            ], 
+            "name": "types"
+        }
+    ], 
+    "schema": "DC4CONFIG", 
+    "selection_rules": {
+        "select_related_by_primary_key_and_foreign_key": {
+            "capability": [
+                "filebroker_capability",
+                "filebroker_capability_actions",
+                "filebroker_param_values",
+                "parameter"
+            ], 
+            "profile": [
+                "procap_extension",
+                "profile_capabilities",
+                "company_altlookup"
+            ],
+            "procap_extension": [],
+            "profile_capabilities": [], 
+            "filebroker_capability_actions": [],
+            "filebroker_actions": [
+                "filebroker_action_params"
+            ],
+            "datatype": [
+                "datatype_doctypes",
+                "datatype_appkey"
+            ], 
+            "map": [
+                "map_rsx_version"
+            ],
+            "filebroker_channels": [
+                "filebroker_channel_params"
+            ]
+        }
+    }
+}
