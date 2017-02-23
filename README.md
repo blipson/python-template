@@ -1,7 +1,14 @@
 # python-template
 A Python Flask aplication that utilizes Docker, Nginx, and Supervisor to ensure stability and compartmentalization. Template for API development.
 
-### Building and running locally
+### How to use this template for your own application
+1. Clone or download the repository as a zip file locally
+2. Copy the contents into your own git repository
+3. Replace instances of 'template' with whatever you want your app to be named in folder names, file names, and file contents
+5. (Optional if you don't want to use oracle) Remove the 'cx_Oracle install prep (installing instantclient)' step from the Dockerfile and replace with whatever database/resource configuration you want, remove the .zip files from the template/deploy directory, and remove the `COPY template/deploy/*.zip /opt/oracle/` line from the Dockerfile
+4. Start developing your Flask application inside app.py!
+
+### Building and running locally in docker
 Run 'make clean package build runi tail' (use 'run' instead of 'runi' if you don't want an interactive session, only use 'clean' if you need to clean a previous build)
 
 ### What does the Makefile actually do?
@@ -24,9 +31,11 @@ Run 'make clean package build runi tail' (use 'run' instead of 'runi' if you don
 - Runs aforementioned docker container using all necessary environment variables
 - Logs to console using `docker logs`
 
-### How to use this template for your own application
-1. Clone or download the repository as a zip file locally
-2. Copy the contents into your own git repository
-3. Replace instances of 'template' with whatever you want your app to be named in folder names, file names, and file contents
-5. (Optional if you don't want to use oracle) Remove the 'cx_Oracle install prep (installing instantclient)' step from the Dockerfile and replace with whatever database/resource configuration you want, remove the .zip files from the template/deploy directory, and remove the `COPY template/deploy/*.zip /opt/oracle/` line from the Dockerfile
-4. Start developing your Flask application inside app.py!
+### Building and running locally in debug mode
+1. Make sure you have python 2.7 installed using `brew install python` or `apt-get install python`
+2. Download this file https://bootstrap.pypa.io/get-pip.py and install pip using `python get-pip.py`
+3. Install virtualenv by running `pip install virtualenv`
+4. Navigate to the root directory and run `virtualenv -p /usr/bin/python2.7 template-venv` (name it whatever you want for your project instead of template-venv)
+5. Activate the virtual environment by running `source template-venv/bin/activate`
+6. Run the instructions in the dockerfile locally to set up the oracle instantclient and install the pip packages
+7. Navigate to python-template/template and run `python app.py`
